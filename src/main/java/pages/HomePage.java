@@ -1,14 +1,17 @@
 package pages;
 
+import listeners.ScreenshotListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.NoSuchElementException;
 
 import static utils.LocatorConstants.LOGIN_BUTTON_ID;
 
 public class HomePage extends BasePage {
 
-    private By loginButtonLocator = By.id(LOGIN_BUTTON_ID);
+    private final By loginButtonLocator = By.id(LOGIN_BUTTON_ID);
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -23,8 +26,15 @@ public class HomePage extends BasePage {
     }
 
     public boolean isLoginButtonVisible() {
-        WebElement loginButton = driver.findElement(By.id(LOGIN_BUTTON_ID));
-        return loginButton.isDisplayed();
+
+        try {
+            WebElement loginButton = driver.findElement(loginButtonLocator);
+            return loginButton.isDisplayed();
+        } catch (NoSuchElementException e) {
+            ScreenshotListener screenshotListener = new ScreenshotListener(driver);
+            screenshotListener.takeScreenshot("login_Button_Not_Found");
+            return false;
+        }
     }
 
 

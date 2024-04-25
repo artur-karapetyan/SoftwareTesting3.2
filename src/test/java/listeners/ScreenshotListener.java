@@ -22,11 +22,12 @@ public class ScreenshotListener extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        String methodName = result.getMethod().getMethodName();
+        takeScreenshot(result.getMethod().getMethodName() + "_failure");
+    }
 
+    public void takeScreenshot(String screenshotName) {
         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-        Path screenshotPath = Paths.get("screenshots", methodName + ".png");
+        Path screenshotPath = Paths.get("screenshots", screenshotName + ".png");
 
         try {
             Files.createDirectories(screenshotPath.getParent());
