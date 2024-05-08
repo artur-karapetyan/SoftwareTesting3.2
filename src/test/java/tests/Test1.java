@@ -1,6 +1,5 @@
 package tests;
 
-import listeners.ScreenshotListener;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -31,8 +30,6 @@ public class Test1 extends BaseTest {
         loginPage.login("test@example.com", "incorrectpassword");
 
         String notificationMessage = loginPage.getNotificationMessage();
-        ScreenshotListener screenshotListener = new ScreenshotListener(driver);
-        screenshotListener.takeScreenshot("user_not_found_notification");
         assertEquals(notificationMessage, USER_NOT_FOUND);
 
         homePage.goToHomePage();
