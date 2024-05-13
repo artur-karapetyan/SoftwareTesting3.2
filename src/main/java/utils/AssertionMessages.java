@@ -10,4 +10,10 @@ public class AssertionMessages {
     public static final String USER_NOT_FOUND = "User not found";
 
     public static final String EMAIL_NOT_VALID = "The email address is not valid";
+
+    public static final String SIGN_UP_BUTTON_ENABLED = "Sign up button is enabled, should be disabled";
+
+    public static final String GALLERY_TITLE_IS_FALSE = "Gallery title is not equal searched word";
+
+    public static final String GALLERY_STYLE_TO_COMPARE = "Photoreal";
 }

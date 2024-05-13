@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
-import static utils.LocatorConstants.LOGIN_BUTTON_ID;
-import static utils.LocatorConstants.SIGN_UP_BUTTON_ID;
+import static utils.LocatorConstants.*;
 
 public class HomePage extends BasePage {
 
@@ -22,6 +22,10 @@ public class HomePage extends BasePage {
 
     public void clickSignUpButton() {
         click(signUpButtonLocator);
+    }
+
+    public void goToGalleryPage() {
+        driver.get("https://zoomerang.app/ai-gallery");
     }
 
     public void goToHomePage() {

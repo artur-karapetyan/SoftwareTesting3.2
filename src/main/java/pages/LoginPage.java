@@ -12,7 +12,7 @@ import static utils.LocatorConstants.*;
 
 public class LoginPage extends BasePage {
 
-    private final By notificationLocator = By.xpath("//*[@id=\"__next\"]/div[1]/div/div[1]/div/div[2]");
+    private final By notificationLocator = By.xpath(NOTIFICATION_XPATH);
 
 
     public LoginPage(WebDriver driver) {
@@ -65,5 +65,10 @@ public class LoginPage extends BasePage {
     public String getNotificationMessage() {
         WebElement notificationElement = driver.findElement(notificationLocator);
         return notificationElement.getText();
+    }
+
+    public boolean isSignUpButtonDisabled() {
+        WebElement submitButton = driver.findElement(By.xpath(SUBMIT_BUTTON_XPATH));
+        return !submitButton.isEnabled();
     }
 }

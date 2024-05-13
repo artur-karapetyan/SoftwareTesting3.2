@@ -55,4 +55,18 @@ public class SignUpTest extends BaseTest {
         String notificationMessage = loginPage.getNotificationMessage();
         assertEquals(notificationMessage, EMAIL_NOT_VALID);
     }
+
+    @Test
+    public void testSignUpWithInvalidConfirmPassword() {
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = new HomePage(driver);
+
+        testSignUpButtonExists();
+
+        homePage.clickSignUpButton();
+
+        loginPage.fillSignUpFields("test@example.com", "incorrectpassword", "incorrectPassword");
+
+        assertTrue(loginPage.isSignUpButtonDisabled(), SIGN_UP_BUTTON_ENABLED);
+    }
 }
