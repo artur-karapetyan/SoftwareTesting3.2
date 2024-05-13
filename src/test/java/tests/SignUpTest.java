@@ -6,10 +6,9 @@ import pages.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-import static utils.AssertionMessages.LOGIN_BUTTON_NOT_FOUND;
-import static utils.AssertionMessages.USER_NOT_FOUND;
+import static utils.AssertionMessages.*;
 
-public class Test1 extends BaseTest {
+public class SignUpTest extends BaseTest {
 
     @Test
     public void testLoginButtonExists() {
@@ -21,7 +20,7 @@ public class Test1 extends BaseTest {
     @Test
     public void testLoginWithIncorrectPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver) ;
+        HomePage homePage = new HomePage(driver);
 
         testLoginButtonExists();
 
@@ -33,5 +32,27 @@ public class Test1 extends BaseTest {
         assertEquals(notificationMessage, USER_NOT_FOUND);
 
         homePage.goToHomePage();
+    }
+
+    @Test
+    public void testSignUpButtonExists() {
+        HomePage homePage = new HomePage(driver);
+        homePage.goToHomePage();
+        assertTrue(homePage.isSignUpButtonVisible(), SIGN_UP_BUTTON_NOT_FOUND);
+    }
+
+    @Test
+    public void testSignUpWithInvalidEmail() {
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = new HomePage(driver);
+
+        testSignUpButtonExists();
+
+        homePage.clickSignUpButton();
+
+        loginPage.signUp("test@example.com", "incorrectpassword", "incorrectpassword");
+
+        String notificationMessage = loginPage.getNotificationMessage();
+        assertEquals(notificationMessage, EMAIL_NOT_VALID);
     }
 }

@@ -37,6 +37,31 @@ public class LoginPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(notificationLocator));
     }
 
+    public void signUp(String email, String password, String confirm) {
+        fillSignUpFields(email, password, confirm);
+
+        // Click submit
+        WebElement submitButton = driver.findElement(By.xpath(SING_UP_SUBMIT_BUTTON_XPATH));
+        submitButton.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(notificationLocator));
+    }
+
+    public void fillSignUpFields(String email, String password, String confirm) {
+        // Input email
+        WebElement emailInput = driver.findElement(By.xpath(SIGN_UP_EMAIL_INPUT_XPATH));
+        emailInput.sendKeys(email);
+
+        // Input password
+        WebElement passwordInput = driver.findElement(By.xpath(SIGN_UP_PASSWORD_INPUT_XPATH));
+        passwordInput.sendKeys(password);
+
+        // Input confirm password
+        WebElement confirmPassword = driver.findElement(By.xpath(SING_UP_CONFIRM_INPUT_XPATH));
+        confirmPassword.sendKeys(confirm);
+    }
+
     public String getNotificationMessage() {
         WebElement notificationElement = driver.findElement(notificationLocator);
         return notificationElement.getText();

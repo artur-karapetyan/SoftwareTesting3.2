@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -25,11 +26,11 @@ public class BaseTest {
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
-//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-//        driver = new ChromeDriver();
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setBrowserName("chrome");
+//        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
