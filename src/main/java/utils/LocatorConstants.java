@@ -30,7 +30,7 @@ public class LocatorConstants {
 
     public static final String EMAIL_INPUT_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[1]/div/div[3]/input";
 
-    public static final  String PASSWORD_INPUT_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[1]/div/div[4]/div/input";
+    public static final String PASSWORD_INPUT_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[1]/div/div[4]/div/input";
 
     public static final String SUBMIT_BUTTON_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[1]/div/button[2]";
 
@@ -41,5 +41,19 @@ public class LocatorConstants {
     public static final String SING_UP_CONFIRM_INPUT_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[2]/div[1]/div[5]/div/input";
 
     public static final String SING_UP_SUBMIT_BUTTON_XPATH = "//*[@id=\"__next\"]/div[4]/div[2]/div[2]/form[2]/div[1]/button";
+
+    public static final String CONTACT_BUTTON = "//*[@id=\"__next\"]/div[4]/div[11]/div[1]/div[1]/div/div[4]/div[2]/a[1]";
+
+    public static final String CONTACT_FULL_NAME = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[1]/div[1]/input";
+
+    public static final String CONTACT_PHONE = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[1]/div[2]/input";
+
+    public static final String CONTACT_EMAIL = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[2]/input";
+
+    public static final String CONTACT_TEXT = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[3]/textarea";
+
+    public static final String EMAIL_ERROR_XPATH = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[2]/span";
+
+    public static final String FULL_NAME_EMPTY_XPATH = "//*[@id=\"__next\"]/div[6]/div/div[1]/form/div[1]/div[1]/span";
 
 }

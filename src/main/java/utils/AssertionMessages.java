@@ -16,4 +16,10 @@ public class AssertionMessages {
     public static final String GALLERY_TITLE_IS_FALSE = "Gallery title is not equal searched word";
 
     public static final String GALLERY_STYLE_TO_COMPARE = "Photoreal";
+
+    public static final String CONTACT_WRONG_EXTENSION = "Wrong email extension";
+
+    public static final String CONTACT_SHOULD_CONTAIN_AT = "Email should contain '@'";
+
+    public static final String CONTACT_CANNOT_BE_EMPTY = "Field cannot be empty";
 }

@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 import pages.GalleryPage;
 import pages.HomePage;
-import pages.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
